@@ -1,57 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;800&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700;800&display=swap');
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
     background-color: #d9d9d9;
     color: #434343;
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }
 
-.container{
+.container {
     display: grid;
     grid-template-columns: 40% 30% 30%;
-    grid-template-rows: repeat(6,auto);
+    grid-template-rows: repeat(6, auto);
     grid-column-gap: 10px;
     grid-row-gap: 15px;
     max-width: 1250px;
     margin: 0 auto;
     background-color: aliceblue;
     padding: 0 50px;
-    
+
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     grid-column: 1/4;
     grid-row: 1/2;
     border-bottom: 3px solid #b0e0ea;
     color: #9f9c9c;
-    padding: 20px 0; 
-    
+    padding: 20px 0;
+
 }
 
-header> .logo> i{
-        color: #50c6db;
+header > .logo > i {
+    color: #50c6db;
     font-size: 2em;
 }
-header> nav> ul{
+
+header > nav > ul {
     display: flex;
     list-style-type: none;
 }
+
 header li {
     margin: .5em;
 }
-header> button, button:active, button:focus{
-    
+
+header > button,
+button:active,
+button:focus {
+
 
     background-color: #51bb7b;
     color: #fff;
@@ -59,45 +66,200 @@ header> button, button:active, button:focus{
     border-radius: 1.3em;
     border-style: none;
 }
-header > button:focus{
+
+header > button:focus {
     background-color: rgb(161, 242, 126);
 }
-.hero{
+
+.hero {
     grid-column: 1/2;
     grid-row: 2/3;
-    
+
 }
-.hero> img {
+
+.hero > img {
+
     width: 100%;
 }
 
 .sidebar {
     grid-column: 1/2;
     grid-row: 3/5;
+    border-top: 3px solid #693f7e;
+    background-color: #f9f9f6;
+    padding: 2em;
 }
 
-main{
+.sidebar h3 {
+    margin: 1em 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+}
+
+.sidebar li {
+    margin: .2em 0;
+}
+
+.sidebar a {
+    font-size: .75em;
+    font-weight: 500;
+}
+
+main {
     grid-column: 2/4;
     grid-row: 2/4;
 }
+
+main h1 {
+    color: #50c6db;
+    font-size: 700;
+    margin-bottom: .5em;
+}
+
+main p {
+    margin: .7em 0;
+    font-weight: 500;
+    color: #9f9c9c;
+}
+
+.help {
+
+    display: flex;
+    justify-content: space-around;
+    grid-column: 2/4;
+    grid-row: 4/5;
+    border: 1.5px solid #d9d9d9;
+    padding: 1em;
+
+}
+
+.help-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.help-item h3 {
+    font-weight: 500;
+}
+
+.help-item p {
+    margin: .75em 0;
+    font-size: .75em;
+
+}
+
+.help-item button {
+    border: 2px solid rgb(161, 242, 126);
+    padding: .5em;
+    color: #50c6db;
+    ;
+    ;
+    font-weight: 500;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.gallery {
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 5/6;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-gap: .8em;
+}
+
 .help {
     grid-column: 2/4;
     grid-row: 4/5;
 }
+
 .gallery {
     grid-column: 1/3;
     grid-row: 5/6;
-    
+
 }
+
 .gallery img {
-    width: 20%;
+    width: 100%;
 }
+
 .sidebar-related {
     grid-column: 3/4;
     grid-row: 5/6;
+    padding: 2em;
+
 }
+
+.sidebar-related h3 {
+    margin-bottom: .5em;
+    padding-bottom: .5em;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.sidebar-related ul {
+    margin-left: 1.1em;
+}
+
+.sidebar-related a {
+    font-size: .75em;
+    font-weight: 500;
+    color: #9f9c9c;
+    margin-left: .2em;
+}
+
 .footer {
-     grid-column: 1/4;
+    grid-column: 1/4;
     grid-row: 6/7;
     text-align: center;
+    background-color: #9f9c9c;
+    padding: 2em 0;
+}
+
+.footer h3 {
+    color: #fff;
+    margin-bottom: .7em
+}
+
+.footer p {
+
+    margin-bottom: .8em;
+    font-size: .75em;
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        grid-template-rows: repeat(8, auto);
+    }
+
+    .hero {
+        display: none;
+    }
+    
+    .sidebar {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+
+    .sidebar h3 {
+        text-align: center;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    main {
+        grid-column: 1/4;
+        grid-row: 3/4;
+    }
+    .help {
+        grid-column: 1/4;
+    }
+    
 }
